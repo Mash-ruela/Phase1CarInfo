@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+/* BUTTONS - Aligned Horizontally */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background: rgb(49, 109, 179);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logo-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logo-button img {
+    width: 80px;
+    height: auto;
+}
+
+/* FORM - Arranged Vertically */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+.dark-mode form {
+    background: #444;
+    color: white;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    font-size: 16px;
+}
+
+button {
+    width: auto;
+}
+
+/* MODELS - Horizontal Scrolling */
+.models-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    justify-content: center;
+}
+
+.model-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    background: white;
+    text-align: center;
+}
+
+.dark-mode .model-card {
+    background: #333;
+    color: white;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}

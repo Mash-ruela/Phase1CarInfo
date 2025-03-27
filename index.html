@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Info App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="dark-mode-toggle">Dark Mode</button>
+
+    <h1>Car Brands</h1>
+    <div id="logo-container"></div>
+    <div id="car-info"></div>
+
+    <h2>Add a New Car Brand</h2>
+    <form id="add-car-form">
+        <input type="text" id="car-name" placeholder="Car Brand Name" required>
+        <input type="text" id="car-founder" placeholder="Founder" required>
+        <input type="number" id="car-year" placeholder="Year Founded" required>
+        <input type="text" id="car-country" placeholder="Country" required>
+        <textarea id="car-history" placeholder="Brief History" required></textarea>
+        <input type="url" id="car-logo" placeholder="Car Logo URL" required>
+        <button type="submit">Add Car</button>
+    </form>
+
+    <h2>Add Features to an Existing Model</h2>
+    <form id="add-feature-form">
+        <select id="car-select"></select>
+        <input type="text" id="model-name" placeholder="Model Name" required>
+        <input type="text" id="model-year" placeholder="Model Year Range" required>
+        <textarea id="model-info" placeholder="Model Info" required></textarea>
+        <input type="url" id="model-image" placeholder="Model Image URL" required>
+        <button type="submit">Add Feature</button>
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>
