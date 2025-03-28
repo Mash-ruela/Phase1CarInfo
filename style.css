@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: rgb(162, 221, 248);
     color: black;
     text-align: center;
     margin: 0;
@@ -9,10 +9,9 @@ body {
 
 .dark-mode {
     background-color: #222;
-    color: white;
+    color: rgb(157, 211, 255);
 }
 
-/* BUTTONS - Aligned Horizontally */
 .button-container {
     display: flex;
     justify-content: center;
@@ -49,12 +48,11 @@ button {
     height: auto;
 }
 
-/* FORM - Arranged Vertically */
 form {
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
-    background: white;
+    background: rgb(38, 74, 90);
     border-radius: 8px;
     width: 90%;
     max-width: 400px;
@@ -66,15 +64,15 @@ form {
 }
 
 .dark-mode form {
-    background: #444;
-    color: white;
+    background: #010120;
+    color: rgb(59, 58, 61);
 }
 
 input, textarea, select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #aaa;
+    border: 1px solid #0c0c0c;
     font-size: 16px;
 }
 
@@ -82,7 +80,6 @@ button {
     width: auto;
 }
 
-/* MODELS - Horizontal Scrolling */
 .models-container {
     display: flex;
     gap: 10px;
@@ -92,16 +89,16 @@ button {
 }
 
 .model-card {
-    border: 1px solid #ccc;
+    border: 1px solid #fafafd;
     padding: 10px;
     border-radius: 5px;
     width: 200px;
-    background: white;
+    background: rgb(176, 210, 250);
     text-align: center;
 }
 
 .dark-mode .model-card {
-    background: #333;
+    background: #262627;
     color: white;
 }
 

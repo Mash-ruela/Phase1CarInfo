@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // const API_URL = "http://localhost:4000/cars";
-const API_URL = 'https://backendphase1-nipi.onrender.com/api/cars'
+const API_URL = 'https://my-app-backend-62ep.onrender.com';
 
 function fetchCars() {
     fetch(API_URL)
@@ -18,7 +18,11 @@ function fetchCars() {
             displayLogos(cars);
             populateCarDropdown(cars);
         })
-        .catch(error => console.error("Error fetching cars:", error));
+        .catch(error => {
+            console.error("Error fetching cars:", error);
+            const logoContainer = document.getElementById("logo-container");
+            logoContainer.innerHTML = "<p>Failed to load car data. Please try again later.</p>";
+        });
 }
 
 function displayLogos(cars) {
@@ -80,13 +84,31 @@ function addNewCar(event) {
         popular_models: []
     };
 
+    if (!newCar.name || !newCar.founder || !newCar.year || !newCar.country || !newCar.history || !newCar.logo) {
+        alert("Please fill out all the fields.");
+        return;
+    }
+
     fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newCar)
     })
-    .then(response => response.json())
-    .then(() => fetchCars());
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to add new car: ${response.statusText}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Car added successfully:", data);
+        fetchCars(); 
+        alert("New car added successfully!");
+    })
+    .catch(error => {
+        console.error("Error adding car:", error);
+        alert("There was an error adding the car. Please try again.");
+    });
 }
 
 function addFeature(event) {
@@ -112,7 +134,11 @@ function addFeature(event) {
                 body: JSON.stringify({ popular_models: car.popular_models })
             });
         })
-        .then(() => fetchCars());
+        .then(() => fetchCars())
+        .catch(error => {
+            console.error("Error adding feature:", error);
+            alert("There was an error adding the feature. Please try again.");
+        });
 }
 
 function toggleDarkMode() {
