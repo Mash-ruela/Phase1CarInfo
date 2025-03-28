@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("add-feature-form").addEventListener("submit", addFeature);
 });
 
-// const API_URL = "http://localhost:4000/cars";
-const API_URL = 'https://my-app-backend-62ep.onrender.com';
+// Update the API URL to your deployed backend
+const API_URL = 'https://elephant-m9wx.onrender.com/cars';
 
 function fetchCars() {
     fetch(API_URL)
         .then(response => response.json())
         .then(cars => {
             if (!Array.isArray(cars)) {
-                throw new Error("Invalid data format: Expected an array under 'cars'");
+                throw new Error("Invalid data format: Expected an array");
             }
             displayLogos(cars);
             populateCarDropdown(cars);
